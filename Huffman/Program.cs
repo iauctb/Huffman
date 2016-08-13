@@ -15,7 +15,7 @@ namespace HuffmanProject
              * Finds the frequencies
              * creates the Huffman tree
              * generates the dictionary
-             * converts the inout string
+             * converts the input string
              * Attention! Program may fail if only one type of character is given as input
              * please give at least to different characters.
              */
@@ -25,6 +25,7 @@ namespace HuffmanProject
             {
                 var hfc = new HuffmanEncoder(x);
                 OutputStream.Write(Environment.GetFolderPath(SpecialFolder.DesktopDirectory), hfc);
+                Console.WriteLine("Output is saved in Desktop\\Huffman Encoder");
             }
             catch (Exception ex)
             {
@@ -36,9 +37,10 @@ namespace HuffmanProject
 
             /*
              * Implementing Mode II: Decoder
-             * Not Implemented yet!
+             * Parse the Binary File
+             * 
              */
-
+            Console.WriteLine(HuffmanDecoder.Decode(Environment.GetFolderPath(SpecialFolder.DesktopDirectory).ToString() + "\\Huffman Encoder"));
 
 
             Console.ReadKey();
