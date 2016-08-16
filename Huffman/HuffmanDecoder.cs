@@ -16,6 +16,7 @@ namespace CACTB.Coding.Huffman
             bool isCompelete = false;
             int extra = Convert.ToInt32(Bitwise.Substring(0, 8), 2);
             Bitwise = Bitwise.Remove(0, 8);
+            Bitwise = Bitwise.Remove(Bitwise.Length - extra, extra);
             while (isCompelete != true)
             {
 
@@ -35,16 +36,12 @@ namespace CACTB.Coding.Huffman
                             c++;
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         isCompelete = true;
-                        break;
                     }
                 }
-                if (isCompelete)
-                    break;
             }
-            Bitwise = Bitwise.Remove(c, extra);
             return Bitwise;
         }
     }

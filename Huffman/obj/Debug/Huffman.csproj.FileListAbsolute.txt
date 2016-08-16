@@ -4,3 +4,9 @@ C:\Users\Ashkan Taravati\Documents\GitHub\C#\Huffman\Huffman\bin\Debug\Huffman.p
 C:\Users\Ashkan Taravati\Documents\GitHub\C#\Huffman\Huffman\obj\Debug\Huffman.csprojResolveAssemblyReference.cache
 C:\Users\Ashkan Taravati\Documents\GitHub\C#\Huffman\Huffman\obj\Debug\Huffman.exe
 C:\Users\Ashkan Taravati\Documents\GitHub\C#\Huffman\Huffman\obj\Debug\Huffman.pdb
+C:\Users\behzad\Documents\GitHub\Huffman\Huffman\bin\Debug\Huffman.exe.config
+C:\Users\behzad\Documents\GitHub\Huffman\Huffman\obj\Debug\Huffman.exe
+C:\Users\behzad\Documents\GitHub\Huffman\Huffman\obj\Debug\Huffman.pdb
+C:\Users\behzad\Documents\GitHub\Huffman\Huffman\bin\Debug\Huffman.exe
+C:\Users\behzad\Documents\GitHub\Huffman\Huffman\bin\Debug\Huffman.pdb
+C:\Users\behzad\Documents\GitHub\Huffman\Huffman\obj\Debug\Huffman.csprojResolveAssemblyReference.cache
