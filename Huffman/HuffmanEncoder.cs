@@ -106,7 +106,7 @@ namespace CACTB.Coding.Huffman
             {
 #if TEST
                 
-                Console.WriteLine("********************");
+                Console.WriteLine("****************************************");
                 FrequencyList.ForEach(x => Console.WriteLine(x.GetData()));
                 Console.ReadKey();
                 
@@ -128,8 +128,10 @@ namespace CACTB.Coding.Huffman
                 FrequencyList.Sort();
             }
 #if ISCONSOLE
+            Console.Clear();
+            Console.WriteLine("Tree elements are:");
             Tree.TreeNodes.ForEach(x => Console.WriteLine(x.GetData()));
-
+            Console.WriteLine("Press any key to continue");
             Console.ReadKey();
 #endif
 
@@ -144,6 +146,7 @@ namespace CACTB.Coding.Huffman
 #if ISCONSOLE
         void PrintDictionary()
         {
+            Console.Clear();
             foreach (var x in Codex)
             {
                 Console.WriteLine("{0} is encoded as {1}", x.Key, x.Value);
@@ -156,6 +159,7 @@ namespace CACTB.Coding.Huffman
             foreach (var code in Codex)
             {
                 Bit = Bit.Replace(code.Key.ToString(), code.Value);
+                //Console.WriteLine(Bitwise);
             }
 
             Bitwise = Bit;

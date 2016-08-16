@@ -24,6 +24,10 @@ namespace HuffmanProject
             try
             {
                 var hfc = new HuffmanEncoder(x);
+                Console.WriteLine("The encoded binary string for {0} is:\n {1}", hfc.Standard, hfc.Bitwise);
+                Console.WriteLine("The encoded binary string length is:\n {0}bits", hfc.Bitwise.Length);
+                Console.WriteLine("Press any key to save data to disk");
+                Console.ReadKey();
                 OutputStream.Write(Environment.GetFolderPath(SpecialFolder.DesktopDirectory), hfc);
                 Console.WriteLine("Output is saved in Desktop\\Huffman Encoder");
             }
@@ -40,8 +44,17 @@ namespace HuffmanProject
              * Parse the Binary File
              * 
              */
-            Console.WriteLine(HuffmanDecoder.Decode(Environment.GetFolderPath(SpecialFolder.DesktopDirectory).ToString() + "\\Huffman Encoder"));
-
+            try {
+                Console.Clear();
+                Console.WriteLine("Done!");
+                Console.WriteLine("Now, let's decode the encoded binary! Press any key to continue...");
+                Console.ReadKey();
+                Console.WriteLine(HuffmanDecoder.Decode(Environment.GetFolderPath(SpecialFolder.DesktopDirectory).ToString() + "\\Huffman Encoder"));
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             Console.ReadKey();
 
