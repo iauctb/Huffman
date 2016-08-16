@@ -30,25 +30,25 @@ namespace CACTB.Coding.Huffman
             var binaryString = hfc.Bitwise;
 
             //Create complete octets
-            var bound = binaryString.Length % 8;
-            for (int i = 0; i < 8 - bound; i++)
+            var lack =(8-( binaryString.Length % 8)==8)?0: 8 - (binaryString.Length % 8);//number of bits needed to append to the binaryString until it is octet.
+            for (int i = 0; i < lack; i++)
                 binaryString += "0";
 
 
-            var size = binaryString.Length / 8;//just to reduce code
-
+            var stringArraySize = binaryString.Length / 8;//just to reduce code
+            var ByteArraySize = stringArraySize + 2;
             //split to octets
-            string[] sub = new string[size];
-            for (int i = 0; i < size; i++)
-            {
+            string[] sub = new string[stringArraySize];
+            for (int i = 0; i < stringArraySize; i++)
                 sub[i] = binaryString.Substring(i * 8, 8);
-            }
+            
 
             //Convert to binary octets
-            byte[] x = new byte[size + 1];
-            x[0] = (byte)(8 - bound);//first byte will represent the redundant 0s used for making octets
-            for (int i = 1; i < size + 1; i++)
-                x[i] = Convert.ToByte(sub[i - 1], 2);
+            byte[] x = new byte[ByteArraySize];
+            x[0] = (byte)(lack);//first byte will represent the redundant 0s used for making octets
+            x[1] = hfc.OriginalSize;//second byte will represent the size for the oroginal input string
+            for (int i = 2; i < ByteArraySize; i++)
+                x[i] = Convert.ToByte(sub[i - 2], 2);
 
             try
             {

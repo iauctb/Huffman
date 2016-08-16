@@ -15,9 +15,11 @@ namespace CACTB.Coding.Huffman
             int c = 0;
             bool isCompelete = false;
             int extra = Convert.ToInt32(Bitwise.Substring(0, 8), 2);
-            Bitwise = Bitwise.Remove(0, 8);
+            int stringSize = Convert.ToInt32(Bitwise.Substring(8, 8), 2);
+            Bitwise = Bitwise.Remove(0, 16);
             Bitwise = Bitwise.Remove(Bitwise.Length - extra, extra);
-            while (isCompelete != true)
+            int s = 0;
+            while (!isCompelete)
             {
 
                 foreach (var item in Codex)
@@ -27,17 +29,18 @@ namespace CACTB.Coding.Huffman
                     int ln = val.Length;
                     try
                     {
-                        string sub = Bitwise.Substring(c, ln);
+                        string sub = Bitwise.Substring(s, ln);
 
                         if (sub == val)
                         {
-                            Bitwise = Bitwise.Remove(c, ln);
-                            Bitwise = Bitwise.Insert(c, key);
-                            c++;
+                            Bitwise = Bitwise.Remove(s, ln);
+                            Bitwise = Bitwise.Insert(s, key);
+                            s++;
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
+                        //throw;
                         isCompelete = true;
                     }
                 }
